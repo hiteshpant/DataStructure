@@ -1,0 +1,7 @@
+c:\users\inhipant\documents\visual studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\bin\Debug\AlgorithmPractice.exe.config
+c:\users\inhipant\documents\visual studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\bin\Debug\AlgorithmPractice.exe
+c:\users\inhipant\documents\visual studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\bin\Debug\AlgorithmPractice.pdb
+c:\users\inhipant\documents\visual studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\obj\Debug\AlgorithmPractice.exe
+c:\users\inhipant\documents\visual studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\obj\Debug\AlgorithmPractice.pdb
+C:\Users\inhipant\Documents\Visual Studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\obj\Debug\AlgorithmPractice.csprojAssemblyReference.cache
+C:\Users\inhipant\Documents\Visual Studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\obj\Debug\AlgorithmPractice.csproj.CoreCompileInputs.cache
