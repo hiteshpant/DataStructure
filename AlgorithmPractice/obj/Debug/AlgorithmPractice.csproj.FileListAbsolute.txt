@@ -5,3 +5,10 @@ c:\users\inhipant\documents\visual studio 2015\Projects\AlgorithmPractice\Algori
 c:\users\inhipant\documents\visual studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\obj\Debug\AlgorithmPractice.pdb
 C:\Users\inhipant\Documents\Visual Studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\obj\Debug\AlgorithmPractice.csprojAssemblyReference.cache
 C:\Users\inhipant\Documents\Visual Studio 2015\Projects\AlgorithmPractice\AlgorithmPractice\obj\Debug\AlgorithmPractice.csproj.CoreCompileInputs.cache
+C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\bin\Debug\AlgorithmPractice.exe.config
+C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\bin\Debug\AlgorithmPractice.exe
+C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\bin\Debug\AlgorithmPractice.pdb
+C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.csproj.CoreCompileInputs.cache
+C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.exe
+C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.pdb
+C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.csprojAssemblyReference.cache

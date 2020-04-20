@@ -33,5 +33,12 @@ namespace AlgorithmTest
             var result = _UniqueStringChecker.GetLongestSubstringlength(new StringBuilder("bbbbbb"));
             Assert.AreEqual(1, result);
         }
+
+        [TestMethod]
+        public void TestReplaceWith()
+        {
+            var result = StringReplace.ReplaceString("My Name is Hitesh ");
+            Assert.AreEqual(result.ToString(), "My%20Name%20is%20Hitesh%20");
+        }
     }
 }

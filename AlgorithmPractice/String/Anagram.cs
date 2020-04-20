@@ -11,24 +11,21 @@ namespace AlgorithmPractice
         public static bool CheckAnagram(string input1, string input2)
         {
             bool result = false;
-            if (!string.IsNullOrEmpty(input1) && !string.IsNullOrEmpty(input2) && 
-                input2.Length==input1.Length)
+
+            if (!string.IsNullOrEmpty(input1) && !string.IsNullOrEmpty(input2) &&
+                input2.Length == input1.Length)
             {
-
-                int sum1 = input1.ToString().Aggregate((arg1, arg2) => Convert.ToChar(arg1 + arg2));
-                int sum2 = input2.ToString().Aggregate((arg1, arg2) => Convert.ToChar(arg1 + arg2));
-
-                if (sum1 == sum2)
-                    result = true;
+                int[] charCheck = new int[256];
+                for (int i = 0; i < input1.Length; i++)
+                {
+                    charCheck[input1[i]]++;
+                    charCheck[input2[i]]--;
+                }              
             }
             else
                 result = false;
             return result;
         }
-
-        private static char SunChar(char arg1, char arg2)
-        {
-            return Convert.ToChar((int)arg1 + (int)arg2);
-        }
+      
     }
 }

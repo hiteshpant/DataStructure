@@ -25,13 +25,14 @@ namespace AlgorithmPractice.Array
                 }
                 else
                 {
-                    if (j == nums.Length - 1)
-                    {
-                        i++;
-                        j = i + 1;
-                    }
-                    else
-                        j++;
+                    j++;
+                    ////if (j == nums.Length - 1)
+                    ////{
+                    ////    i++;
+                    ////    j = i + 1;
+                    ////}
+                    //else
+                    //    j++;
 
                 }
 

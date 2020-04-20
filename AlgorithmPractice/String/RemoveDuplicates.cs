@@ -27,6 +27,6 @@ namespace AlgorithmPractice
                 }
             }
             return index;
-        }
+        }       
     }
 }

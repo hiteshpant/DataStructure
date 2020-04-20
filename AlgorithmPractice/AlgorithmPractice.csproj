@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AlgorithmPractice</RootNamespace>
     <AssemblyName>AlgorithmPractice</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,9 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddLinkedList.cs" />
+    <Compile Include="Array\IslandCalculator.cs" />
     <Compile Include="Array\RemoveDuplicate.cs" />
     <Compile Include="Array\TwoSum.cs" />
+    <Compile Include="Graph.cs" />
+    <Compile Include="StackQueue\IQueue.cs" />
     <Compile Include="StackQueue\IStack.cs" />
+    <Compile Include="StackQueue\QueueFromLL.cs" />
     <Compile Include="StackQueue\SetOfStacks.cs" />
     <Compile Include="StackQueue\SingleArrayThreeStack.cs" />
     <Compile Include="StackQueue\StackFromLinkedList.cs" />
@@ -61,12 +66,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="String\RemoveDuplicates.cs" />
     <Compile Include="String\LongestSubstrinProblem.cs" />
+    <Compile Include="String\StringReplace.cs" />
     <Compile Include="String\UniqueStringChecker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Graph\" />
+    <Folder Include="Tree\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

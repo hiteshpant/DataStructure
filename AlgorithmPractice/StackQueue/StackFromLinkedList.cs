@@ -19,16 +19,18 @@ namespace AlgorithmPractice.StackQueue
 
         public T Pop()
         {
-            Node<T> tempTop;
-            if (Top == null)
-                throw new Exception("Stack is empty");
-            else
+            Node<T> previousNode = null;
+            if (Top != null)
             {
-                tempTop = Top;
-                Top = Top.Next;
+                previousNode = Top.Next;
+                Top = previousNode;
                 Size--;
             }
-            return tempTop.Data;
+            else
+            {
+                throw new Exception("Stack is empty");
+            }
+            return previousNode.Data;
         }
 
 
@@ -38,6 +40,7 @@ namespace AlgorithmPractice.StackQueue
 
             if (Top != null)
             {
+                //connect new node to t
                 newNode.Next = Top;
                 Top = newNode;
             }

@@ -23,7 +23,7 @@ namespace AlgorithmPractice.StackQueue
             stack1Size = length / 3 - 1;
             stack2Size = length / 3 - 1;
             stack3Size = length / 3 - 1;
-            topIndex = new int[3] { 0, stack1Size + 1, stack2Size + 1 };
+            topIndex = new int[3] { 0, 0, 0 };
         }
 
         public bool Push(T value, ArrayIndex stackIndex)
@@ -66,8 +66,72 @@ namespace AlgorithmPractice.StackQueue
             return input[index];
         }
 
-      
+
     }
 
+
+
+    public class ThreeeStackFromSingleArrayOptimized<T>
+    {
+
+        private int availablefreeIndex = 0;
+        private T[] _input;
+        private int[] _TopIndexPointer;
+        int free = 0;
+        private int[] _FreeIndexPointer;
+
+        public ThreeeStackFromSingleArrayOptimized(int inputSize, int noStack)
+        {
+            _input = new T[inputSize];
+            _FreeIndexPointer = new int[_input.Length];
+            _TopIndexPointer = new int[noStack];
+
+            for (int i = 0; i < noStack; i++)
+            {
+                _TopIndexPointer[i] = -1;
+            }
+            for (int i = 0; i < _FreeIndexPointer.Length - 1; i++)
+            {
+                _FreeIndexPointer[i] = i + 1;
+            }
+           
+            _FreeIndexPointer[inputSize - 1] = -1;
+        }
+
+        public bool Push(T value, int stackIndex)
+        {
+            _input[free] = value;
+            var nextFreeValue = _FreeIndexPointer[free];
+            _FreeIndexPointer[free] = _TopIndexPointer[stackIndex];
+            _TopIndexPointer[stackIndex] = free;
+            free = nextFreeValue;
+            return true;
+        }
+
+        public T Pop(int stackIndex)
+        {
+            //Retrive Top Value for the stackIndex
+            var topIndexValue = _TopIndexPointer[stackIndex];
+            
+            //Get The previous connected node to this topNode
+            var previousTopValue = _FreeIndexPointer[topIndexValue];
+
+            //Update the Top Index array with new top
+            _TopIndexPointer[stackIndex] = previousTopValue;
+
+            //Update the FreeIndex of array
+            _FreeIndexPointer[topIndexValue] = free;
+
+            free = topIndexValue;
+
+            return _input[topIndexValue];
+        }
+
+        public T Peek(int stackIndex)
+        {
+            return _input[_TopIndexPointer[stackIndex]];
+        }        
+
+    }
 
 }
