@@ -9,57 +9,64 @@ namespace AlgorithmPractice
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //Console.WriteLine("Please enter the first strings");
-            //string input1 = Console.ReadLine();
+            bool toBeRepeaed = true;       
+            while (toBeRepeaed)
+            {
+                //Console.WriteLine("Enter the Index for notation");
+                long.TryParse(Console.ReadLine(), out long input);
+                getSpreadsheetNotation(input);
+                Console.WriteLine("Preess q to exit nd any other key to continue");
+                toBeRepeaed = Console.ReadLine().ToLowerInvariant() != "q" ? true : false;
+            }
+        }
 
-            //Console.WriteLine("Please enter the second strings");
-            //string input2 = Console.ReadLine();
+        public static string getSpreadsheetNotation(long n)
+        {
+            var rowNum = getRowNumber(n);
 
-            ////UniqueStringChecker stringchecker = new UniqueStringChecker();
-            //RemoveDuplicates removeDuplicate = new RemoveDuplicates();
-            //var index =removeDuplicate.RemoveDuplicateCharacter(ref inputString);
-            //for (int i = 0; i < index; i++)
-            //{
-            //    Console.Write(inputString[i]);
-            //}
+            var columns = printString(n,rowNum);
+            StringBuilder outputString = new StringBuilder();
+            foreach (var item in columns)
+            {
+                outputString.Append(item);
+            }
+            var output = (rowNum + 1) + outputString.ToString().ToUpper();
+            Console.WriteLine(output);
+            return output;
+        }
 
-            //Console.WriteLine("Please enter the rowSize");
-            //Int16 row = 0;
-            //Int16.TryParse(Console.ReadLine(), out row);
+        private static IEnumerable<char> printString(long columnNumber,long rowNum)
+        {
+            columnNumber = columnNumber - (702 * rowNum);
+            // To store result (Excel column name) 
+            StringBuilder columnName = new StringBuilder();
 
-            //Console.WriteLine("Please enter the colume size");
-            //Int16 column = 0;
-            //Int16.TryParse(Console.ReadLine(), out column);
-            //Int16[,] input = new Int16[row, column];
+            while (columnNumber > 0)
+            {
+                // Find remainder 
+                var rem = columnNumber % 26;
 
-            //for (int i = 0; i < row; i++)
-            //{
-            //    var inputrows =Console.ReadLine().Split().ToList().Select((x) =>
-            //    {
-            //        Int16 output = 0;
-            //        Int16.TryParse(x, out output);
-            //        return output;
-            //    });
-            //    for (int j = 0; j < column; j++)
-            //    {
-            //        input[i, j] = inputrows.ToList()[j];
-            //    }
-            //}
+                // If remainder is 0, then a 
+                // 'Z' must be there in output 
+                if (rem == 0)
+                {
+                    columnName.Append('Z');
+                    columnNumber = (columnNumber / 26)-1;
+                }
+                else // If remainder is non-zero 
+                {
+                    columnName.Append((char)((rem - 1) + 'A'));
+                    columnNumber = columnNumber / 26;
+                }
+            }
+            return columnName.ToString().Reverse();
+        }
 
-            ////Anagram.CheckAnagram(input1, input2);
-            ////Console.WriteLine(Anagram.CheckAnagram(input1, input2) == true ? "this is anagram" : "not an anagram");
-
-            //int[,] destination =ImageRotate.RotateImageBy90(input);
-
-            Solution sol = new Solution();
-            sol.AddTwoNumbers();
-
-
-
-            Console.ReadLine();
-
+        private static long getRowNumber(long n)
+        {
+            return n / 703;
         }
     }
 }
