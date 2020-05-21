@@ -32,6 +32,15 @@ namespace AlgorithmPractice.Tree.Problems
             nodes.Enqueue(root);
             TreeNode nextNode;
             List<int> currentLevelNodes;
+            bool leftToRight = true;
+            if (root?.left == null && root?.right == null)
+            {
+                if (root != null)
+                {
+                     LevlTraversedNodes.Add(new List<int> { root.val });
+                }
+                return LevlTraversedNodes;
+            }
             while (true)
             {
                 int nodeCount = nodes.Count;
@@ -52,7 +61,11 @@ namespace AlgorithmPractice.Tree.Problems
                         nodes.Enqueue(nextNode.right);
                     }
                     nodeCount--;
+
                 }
+                if (!leftToRight)
+                    currentLevelNodes.Reverse();
+                leftToRight = !leftToRight;
                 LevlTraversedNodes.Add(currentLevelNodes);
             }
             return LevlTraversedNodes;

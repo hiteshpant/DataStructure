@@ -107,12 +107,12 @@ namespace AlgorithmTest
         public void TestBinaryLevelOrderTraversal()
         {
             AlgorithmPractice.Tree.Problems.TreeNode node = new AlgorithmPractice.Tree.Problems.TreeNode(3);
-            node.left = new AlgorithmPractice.Tree.Problems.TreeNode(9);
-            node.left.left = new AlgorithmPractice.Tree.Problems.TreeNode(11);
-            node.left.right = new AlgorithmPractice.Tree.Problems.TreeNode(12);
-            node.right = new AlgorithmPractice.Tree.Problems.TreeNode(20);
-            node.right.left = new AlgorithmPractice.Tree.Problems.TreeNode(15);
-            node.right.right = new AlgorithmPractice.Tree.Problems.TreeNode(7);
+            //node.left = new AlgorithmPractice.Tree.Problems.TreeNode(9);
+            //node.left.left = new AlgorithmPractice.Tree.Problems.TreeNode(11);
+            //node.left.right = new AlgorithmPractice.Tree.Problems.TreeNode(12);
+            //node.right = new AlgorithmPractice.Tree.Problems.TreeNode(20);
+            //node.right.left = new AlgorithmPractice.Tree.Problems.TreeNode(15);
+            //node.right.right = new AlgorithmPractice.Tree.Problems.TreeNode(7);
             PrintLevelOrderSolution sol = new PrintLevelOrderSolution();
             var output =sol.LevelOrder(node);
         }

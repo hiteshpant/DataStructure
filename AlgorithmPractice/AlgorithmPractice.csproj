@@ -68,6 +68,7 @@
     <Compile Include="String\LongestSubstrinProblem.cs" />
     <Compile Include="String\StringReplace.cs" />
     <Compile Include="String\UniqueStringChecker.cs" />
+    <Compile Include="String\ValidPalindrome.cs" />
     <Compile Include="Thread\PrintOddEven.cs" />
     <Compile Include="Tree\Problems\PrintLevelOrder.cs" />
     <Compile Include="Tree\Problems\SerializeDeserializeBT.cs" />
