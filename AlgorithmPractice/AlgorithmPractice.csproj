@@ -45,43 +45,66 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddLinkedList.cs" />
+    <Compile Include="Array\BinarySearch.cs" />
+    <Compile Include="Array\CalendarBooking.cs" />
+    <Compile Include="Array\CircularArraySearch.cs" />
+    <Compile Include="Array\CombinationSum.cs" />
     <Compile Include="Array\IslandCalculator.cs" />
+    <Compile Include="Array\MergeSorted.cs" />
+    <Compile Include="Array\PrintSpiralMatrix.cs" />
     <Compile Include="Array\RemoveDuplicate.cs" />
+    <Compile Include="Array\RepeatingCharacterProblem.cs" />
+    <Compile Include="Array\SetMatrixToZero.cs" />
+    <Compile Include="Array\TrappingRainWater.cs" />
     <Compile Include="Array\TwoSum.cs" />
+    <Compile Include="BackTracking\PhoneNumberSol.cs" />
+    <Compile Include="BackTracking\WordSearch.cs" />
+    <Compile Include="Graph\CloneGraph.cs" />
+    <Compile Include="Graph\Graph.cs" />
+    <Compile Include="LinkedList\Problem\AddLinkedList.cs" />
+    <Compile Include="LinkedList\Problem\CloneLinkedList.cs" />
     <Compile Include="StackQueue\IQueue.cs" />
     <Compile Include="StackQueue\IStack.cs" />
-    <Compile Include="StackQueue\QueueFromLL.cs" />
-    <Compile Include="StackQueue\SetOfStacks.cs" />
-    <Compile Include="StackQueue\SingleArrayThreeStack.cs" />
-    <Compile Include="StackQueue\StackFromLinkedList.cs" />
+    <Compile Include="StackQueue\Problems\QueueFromLL.cs" />
+    <Compile Include="StackQueue\Problems\SetOfStacks.cs" />
+    <Compile Include="StackQueue\Problems\SingleArrayThreeStack.cs" />
+    <Compile Include="StackQueue\Problems\StackFromLinkedList.cs" />
+    <Compile Include="StackQueue\Problems\StackWithMin.cs" />
+    <Compile Include="StackQueue\Problems\ValidParanthesses.cs" />
     <Compile Include="StackQueue\StackNode.cs" />
-    <Compile Include="StackQueue\StackWithMin.cs" />
     <Compile Include="String\Anagram.cs" />
-    <Compile Include="ImageRotate.cs" />
+    <Compile Include="Array\ImageRotate.cs" />
     <Compile Include="LinkedList\LinkeListModel.cs" />
     <Compile Include="LinkedList\DoublyLinkedList.cs" />
     <Compile Include="LinkedList\SingleLinkedlistOperation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="String\atoi.cs" />
     <Compile Include="String\LexographicSort.cs" />
+    <Compile Include="String\LongestCommonSubsequence.cs" />
+    <Compile Include="String\LongestIncreasingSusequence.cs" />
+    <Compile Include="String\LongestPalindromeSubstring.cs" />
     <Compile Include="String\RemoveDuplicates.cs" />
     <Compile Include="String\LongestSubstrinProblem.cs" />
+    <Compile Include="String\StringRepeataion.cs" />
     <Compile Include="String\StringReplace.cs" />
+    <Compile Include="String\SubDomainVisits.cs" />
     <Compile Include="String\UniqueStringChecker.cs" />
     <Compile Include="String\ValidPalindrome.cs" />
     <Compile Include="Thread\PrintOddEven.cs" />
+    <Compile Include="Tree\Problems\LCABinaryTree.cs" />
     <Compile Include="Tree\Problems\PrintLevelOrder.cs" />
+    <Compile Include="Tree\Problems\RightConnectedLevelOrder.cs" />
     <Compile Include="Tree\Problems\SerializeDeserializeBT.cs" />
     <Compile Include="Tree\Problems\ValidateBST.cs" />
     <Compile Include="Tree\Traversal.cs" />
     <Compile Include="Tree\TreeModel.cs" />
+    <Compile Include="Tree\Trie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Graph\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

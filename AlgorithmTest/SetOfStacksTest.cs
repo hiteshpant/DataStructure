@@ -63,9 +63,47 @@ namespace AlgorithmTest
             obj.Pop(1);
 
             obj.Pop(2);
-            obj.Pop(2); 
+            obj.Pop(2);
 
 
         }
+
+        [TestMethod]
+        public void CheckInvalidParentheses()
+        {
+            ValidParanthesesSolution sol = new ValidParanthesesSolution();
+
+           var result=  sol.MinRemoveToMakeValid("a)b(c)d");
+
+            Assert.AreEqual("ab(c)d", result);
+
+
+        }
+
+        [TestMethod]
+        public void CheckInvalidParentheses1()
+        {
+            ValidParanthesesSolution sol = new ValidParanthesesSolution();
+
+            var result = sol.MinRemoveToMakeValid("lee(t(c)o)de)");
+
+            Assert.IsTrue(result == "lee(t(c)o)de" || result == "lee(t(c)ode)");
+
+
+        }
+
+        [TestMethod]
+        public void CheckInvalidParentheses2()
+        {
+            ValidParanthesesSolution sol = new ValidParanthesesSolution();
+
+            var result = sol.MinRemoveToMakeValid("))((");
+
+            //Assert.AreEqual("ab(c)d", result);
+            Assert.AreEqual(result,string.Empty);
+        }
+
+
+
     }
 }

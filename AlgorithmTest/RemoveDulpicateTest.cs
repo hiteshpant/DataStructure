@@ -18,7 +18,7 @@ namespace AlgorithmTest
             int[] input = new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
 
             RemoveDuplicate removeDuplicate = new RemoveDuplicate();
-            var result = removeDuplicate.GetUniqueArrayLength(input);
+            var result = removeDuplicate.RemoveDuplicates(input);
             Assert.AreEqual(5, result);
         }
 
@@ -28,7 +28,7 @@ namespace AlgorithmTest
             int[] input = new int[] { };
 
             RemoveDuplicate removeDuplicate = new RemoveDuplicate();
-            var result = removeDuplicate.GetUniqueArrayLength(input);
+            var result = removeDuplicate.RemoveDuplicates(input);
             Assert.AreEqual(0, result);
         }
 
@@ -38,7 +38,7 @@ namespace AlgorithmTest
             int[] input = new int[] { 0, 1, 2, 3, 4 };
 
             RemoveDuplicate removeDuplicate = new RemoveDuplicate();
-            var result = removeDuplicate.GetUniqueArrayLength(input);
+            var result = removeDuplicate.RemoveDuplicates(input);
             Assert.AreEqual(5, result);
         }
 
@@ -48,7 +48,7 @@ namespace AlgorithmTest
             int[] input = new int[] { 0, 0, 0, 0 };
 
             RemoveDuplicate removeDuplicate = new RemoveDuplicate();
-            var result = removeDuplicate.GetUniqueArrayLength(input);
+            var result = removeDuplicate.RemoveDuplicates(input);
             Assert.AreEqual(1, result);
         }
 
@@ -58,7 +58,7 @@ namespace AlgorithmTest
             int[] input = new int[] { 2, 16, 11, 7 };
 
             TwoSum twoSum = new TwoSum();
-            var result = twoSum.GetIndicesForSum(input, 9);
+            var result = twoSum.GetIndicesForSumOptimized(input, 9);
             Assert.AreEqual(new int[] { 0, 1 }, result);
         }
     }

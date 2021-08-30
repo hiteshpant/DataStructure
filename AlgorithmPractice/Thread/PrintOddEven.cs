@@ -29,14 +29,14 @@ namespace AlgorithmPractice.Thread
             }
         };
 
-        //public static void Main(string[] args)
-        //{
-        //    ZeroEvenOdd obj = new ZeroEvenOdd(10);           
-        //    Task.Factory.StartNew(() => obj.Even(obj.printNumber));
-        //    Task.Factory.StartNew(() => obj.Odd(obj.printNumber));
-        //    _evenLock.Set();
-        //    Console.ReadLine();
-        //}
+        public static void Main(string[] args)
+        {
+            ZeroEvenOdd obj = new ZeroEvenOdd(10);
+            Task.Factory.StartNew(() => obj.Even(obj.printNumber));
+            Task.Factory.StartNew(() => obj.Odd(obj.printNumber));
+            _evenLock.Set();
+            Console.ReadLine();
+        }
 
         public ZeroEvenOdd(int n)
         {

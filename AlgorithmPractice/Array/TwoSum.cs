@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,37 +7,25 @@ using System.Threading.Tasks;
 namespace AlgorithmPractice.Array
 {
     public class TwoSum
-    {
-        public int[] GetIndicesForSum(int[] nums, int target)
+    {        
+
+        public int[] GetIndicesForSumOptimized(int[] nums, int target)
         {
-            int targetVal = target;
-            int complementingValue;
-            int[] indices = new int[] { -1, -1 };
-            int i = 0, j = 1;
-            while (j < nums.Length)
-            {               
-                complementingValue = target - nums[i];
-                if (nums[j] == complementingValue)
-                {
-                    indices[1] = j;
-                    indices[0] = i;
-                    break;
-                }
-                else
-                {
-                    j++;
-                    ////if (j == nums.Length - 1)
-                    ////{
-                    ////    i++;
-                    ////    j = i + 1;
-                    ////}
-                    //else
-                    //    j++;
+            Dictionary<int,int> compliments = new Dictionary<int, int>();
 
+            for (int i = 0; i < nums.Length; i++)
+            {
+                var key = target - nums[i];
+                if (compliments.ContainsKey(key))
+                {
+                    return new int[] { compliments[key],i };
                 }
-
+                compliments[nums[i]] = i;
             }
-            return indices;
+
+            return new int[] { -1, -1 };
+            
         }
     }
 }
+

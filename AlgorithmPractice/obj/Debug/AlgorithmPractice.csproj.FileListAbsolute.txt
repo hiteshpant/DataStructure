@@ -12,3 +12,10 @@ C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\obj\Debug\Algorit
 C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.exe
 C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.pdb
 C:\Users\inhipant\Source\Repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.csprojAssemblyReference.cache
+C:\Hitesh\repos\DataStructure\AlgorithmPractice\bin\Debug\AlgorithmPractice.exe.config
+C:\Hitesh\repos\DataStructure\AlgorithmPractice\bin\Debug\AlgorithmPractice.exe
+C:\Hitesh\repos\DataStructure\AlgorithmPractice\bin\Debug\AlgorithmPractice.pdb
+C:\Hitesh\repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.csprojAssemblyReference.cache
+C:\Hitesh\repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.csproj.CoreCompileInputs.cache
+C:\Hitesh\repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.exe
+C:\Hitesh\repos\DataStructure\AlgorithmPractice\obj\Debug\AlgorithmPractice.pdb

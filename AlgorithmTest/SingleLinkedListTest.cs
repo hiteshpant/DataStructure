@@ -1,6 +1,8 @@
 ﻿using System;
 using AlgorithmPractice.LinkedList;
+using AlgorithmPractice.LinkedList.Problem;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static ValidParanthesesSolution;
 
 namespace AlgorithmTest
 {
@@ -105,6 +107,86 @@ namespace AlgorithmTest
             SingleLinkedlistOperation operation = new SingleLinkedlistOperation();
             var curentNode = operation.GetAllItemfromNthLocation(_SinglelinkeList, 3);
             Assert.AreEqual(curentNode.Data, 3);
+        }
+
+        [TestMethod]
+        public void TestRemoveNthFromEnd()
+        {
+            var operation = new SingleLinkedlistOperation();
+
+            Node<int> node = new Node<int>(1);
+            node.Next = new Node<int>(2);
+            node.Next.Next = new Node<int>(3);
+            node.Next.Next.Next = new Node<int>(4);
+            node.Next.Next.Next.Next = new Node<int>(5);
+
+            var curentNode = operation.RemoveNthFromEndOpt<int>(node, 2);
+            Assert.AreEqual(curentNode.Data, 3);
+        }
+
+        [TestMethod]
+        public void TestMergeTwoLists()
+        {
+            var merge = new SolutionMerge();
+
+
+            var list1 = new SolutionMerge.ListNode(1);
+            list1.next = new SolutionMerge.ListNode(2);
+            list1.next.next = new SolutionMerge.ListNode(4);
+
+            var list2 = new SolutionMerge.ListNode(1);
+            list2.next = new SolutionMerge.ListNode(3);
+            list2.next.next = new SolutionMerge.ListNode(4);
+
+
+            var curentNode = merge.MergeTwoLists(list1, list2);
+        }
+
+        [TestMethod]
+        public void TestLinkedListSum()
+        {
+            AddLinkedList sol = new AddLinkedList();
+            ListNode l1 = new ListNode(2);
+            l1.next = new ListNode(4);
+            l1.next.next = new ListNode(3);
+
+            ListNode l2 = new ListNode(5);
+            l2.next = new ListNode(6);
+            l2.next.next = new ListNode(4);
+
+
+            ListNode output = new ListNode(7);
+            output.next = new ListNode(0);
+            output.next.next = new ListNode(8);
+
+            var result = sol.AddLinkdeList(l1, l2);
+
+            CollectionAssert.Equals(result, output);
+
+
+        }
+
+        [TestMethod]
+        public void TestAdLinkedList()
+        {
+            AddLinkedList sol = new AddLinkedList();
+            ListNode l1 = new ListNode(7);
+            //l1.next = new ListNode(4);
+            //l1.next.next = new ListNode(3);
+
+            ListNode l2 = new ListNode(5);
+            l2.next = new ListNode(6);
+            l2.next.next = new ListNode(4);
+
+
+            ListNode output = new ListNode(7);
+            //output.next = new ListNode(8);
+            //output.next.next = new ListNode(0);
+            //output.next.next.next= new ListNode(7);
+
+            var result = sol.AddTwoNumbers(l1, output);
+
+            CollectionAssert.Equals(result, output);
         }
 
         [ClassCleanup]

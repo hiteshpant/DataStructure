@@ -39,7 +39,7 @@ namespace AlgorithmPractice.Tree.Problems
         public bool IsValidBST(TreeNode root)
         {
             var currentNode = root;
-            lastValue = root.val;
+            int lastValue = Int32.MaxValue;
             bool result = true;
             while (currentNode != null || _StackOfNodes.Count > 0)
             {              

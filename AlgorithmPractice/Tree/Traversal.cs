@@ -133,9 +133,9 @@ namespace AlgorithmPractice.Tree
                     _Stack1.Push(popedItem?.Right);
 
             }
-            _Stack1.ToList().ForEach(x => _TravesredNodes.Add(x.Data));
+            _Stack2.ToList().ForEach(x => _TravesredNodes.Add(x.Data));
             return _TravesredNodes;
-        }    
+        }
     }
 
     public class LevelOrderTraversal<T> : ITraversal<T>
@@ -144,9 +144,7 @@ namespace AlgorithmPractice.Tree
 
         public IList<T> Traverse(TreeNode<T> tree)
         {
-
             Queue<TreeNode<T>> _Visited = new Queue<TreeNode<T>>();
-
             _Visited.Enqueue(tree);
             while (_Visited.Count > 0)
             {
@@ -165,5 +163,46 @@ namespace AlgorithmPractice.Tree
 
             return _TravesredNodes;
         }
+    }
+
+    public class InvertBinaryTree
+    {
+
+
+        //Definition for a binary tree node.
+        public class TreeNode
+        {
+            public int val;
+            public TreeNode left;
+            public TreeNode right;
+            public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
+            {
+                this.val = val;
+                this.left = left;
+                this.right = right;
+            }
+        }
+
+        public TreeNode InvertTree(TreeNode root)
+        {
+            var currentNode = root;
+            Stack<TreeNode> _Stack = new Stack<TreeNode>();
+            while (currentNode != null || _Stack.Count > 0)
+            {
+                if (currentNode != null)
+                    _Stack.Push(currentNode);
+                currentNode = currentNode?.left;
+                if (currentNode == null && _Stack.Count() > 0)
+                {
+                    var popedItem = _Stack.Pop();
+                    currentNode = popedItem.right;
+                    var temp = popedItem.right;
+                    popedItem.right = popedItem.left;
+                    popedItem.left = temp;
+                }
+            }
+            return root;
+        }
+
     }
 }

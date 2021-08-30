@@ -9,18 +9,18 @@ namespace AlgorithmPractice
 {
     class Program
     {
-        public static void Main(string[] args)
-        {
-            bool toBeRepeaed = true;       
-            while (toBeRepeaed)
-            {
-                //Console.WriteLine("Enter the Index for notation");
-                long.TryParse(Console.ReadLine(), out long input);
-                getSpreadsheetNotation(input);
-                Console.WriteLine("Preess q to exit nd any other key to continue");
-                toBeRepeaed = Console.ReadLine().ToLowerInvariant() != "q" ? true : false;
-            }
-        }
+        //public static void Main(string[] args)
+        //{
+        //    bool toBeRepeaed = true;       
+        //    while (toBeRepeaed)
+        //    {
+        //        //Console.WriteLine("Enter the Index for notation");
+        //        long.TryParse(Console.ReadLine(), out long input);
+        //        getSpreadsheetNotation(input);
+        //        Console.WriteLine("Preess q to exit nd any other key to continue");
+        //        toBeRepeaed = Console.ReadLine().ToLowerInvariant() != "q" ? true : false;
+        //    }
+        //}
 
         public static string getSpreadsheetNotation(long n)
         {

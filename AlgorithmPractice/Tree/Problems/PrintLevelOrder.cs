@@ -27,9 +27,9 @@ namespace AlgorithmPractice.Tree.Problems
     {
         public IList<IList<int>> LevelOrder(TreeNode root)
         {
-            Queue<TreeNode> nodes = new Queue<TreeNode>();
-            IList<IList<int>> LevlTraversedNodes = new List<IList<int>>();
-            nodes.Enqueue(root);
+            Queue<TreeNode> visited = new Queue<TreeNode>();
+            IList<IList<int>> LevelTraversedNodes = new List<IList<int>>();
+            visited.Enqueue(root);
             TreeNode nextNode;
             List<int> currentLevelNodes;
             bool leftToRight = true;
@@ -37,28 +37,27 @@ namespace AlgorithmPractice.Tree.Problems
             {
                 if (root != null)
                 {
-                     LevlTraversedNodes.Add(new List<int> { root.val });
+                     LevelTraversedNodes.Add(new List<int> { root.val });
                 }
-                return LevlTraversedNodes;
+                return LevelTraversedNodes;
             }
             while (true)
             {
-                int nodeCount = nodes.Count;
+                int nodeCount = visited.Count;
                 if (nodeCount == 0)
                     break;
                 currentLevelNodes = new List<int>();
                 while (nodeCount > 0)
                 {
-                    nextNode = nodes.Peek();
-                    nodes.Dequeue();
+                    nextNode = visited.Dequeue();
                     currentLevelNodes.Add(nextNode.val);
                     if (nextNode.left != null)
                     {
-                        nodes.Enqueue(nextNode.left);
+                        visited.Enqueue(nextNode.left);
                     }
                     if (nextNode.right != null)
                     {
-                        nodes.Enqueue(nextNode.right);
+                        visited.Enqueue(nextNode.right);
                     }
                     nodeCount--;
 
@@ -66,9 +65,9 @@ namespace AlgorithmPractice.Tree.Problems
                 if (!leftToRight)
                     currentLevelNodes.Reverse();
                 leftToRight = !leftToRight;
-                LevlTraversedNodes.Add(currentLevelNodes);
+                LevelTraversedNodes.Add(currentLevelNodes);
             }
-            return LevlTraversedNodes;
+            return LevelTraversedNodes;
         }
     }
 }

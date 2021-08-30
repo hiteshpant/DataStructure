@@ -73,7 +73,6 @@ namespace AlgorithmPractice.StackQueue
 
     public class ThreeeStackFromSingleArrayOptimized<T>
     {
-
         private int availablefreeIndex = 0;
         private T[] _input;
         private int[] _TopIndexPointer;
@@ -100,10 +99,19 @@ namespace AlgorithmPractice.StackQueue
 
         public bool Push(T value, int stackIndex)
         {
+            //add the value to free index in big array
             _input[free] = value;
+            //get NextFreeIndex
             var nextFreeValue = _FreeIndexPointer[free];
+
+            ///Copy the last top from stacktop array of the current stackindex to freeindex 
+            ///for linking
             _FreeIndexPointer[free] = _TopIndexPointer[stackIndex];
+
+            //Now this is the new top
             _TopIndexPointer[stackIndex] = free;
+
+            //Nex free value in big aarray
             free = nextFreeValue;
             return true;
         }
@@ -114,10 +122,10 @@ namespace AlgorithmPractice.StackQueue
             var topIndexValue = _TopIndexPointer[stackIndex];
             
             //Get The previous connected node to this topNode
-            var previousTopValue = _FreeIndexPointer[topIndexValue];
+            var previousTopIndexValue = _FreeIndexPointer[topIndexValue];
 
             //Update the Top Index array with new top
-            _TopIndexPointer[stackIndex] = previousTopValue;
+            _TopIndexPointer[stackIndex] = previousTopIndexValue;
 
             //Update the FreeIndex of array
             _FreeIndexPointer[topIndexValue] = free;

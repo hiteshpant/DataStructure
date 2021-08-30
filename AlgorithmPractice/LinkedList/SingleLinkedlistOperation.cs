@@ -127,5 +127,146 @@ namespace AlgorithmPractice.LinkedList
             }
             return IsLinkedListCyclic == true ? fastPointer : null;
         }
+
+        public Node<T> RemoveNthFromEnd<T>(Node<T> head, int n)
+        {
+            int length = 0;
+            var tempNode = head;
+            var tempNode2 = head;
+            while (tempNode != null)
+            {
+                tempNode = tempNode.Next;
+                length++;
+            }
+
+            int indexToBeRemoved = length - n;
+            int counter = 0;
+            if (indexToBeRemoved == -1)
+                return head = head.Next;
+            while (tempNode2 != null)
+            {
+                counter++;
+                if (counter == indexToBeRemoved)
+                {
+                    tempNode2.Next = tempNode2.Next?.Next;
+                    break;
+                }
+                else
+                    tempNode2 = tempNode2.Next;
+
+            }
+            return head;
+
+        }
+
+
+        public Node<T> RemoveNthFromEndOpt<T>(Node<T> head, int n)
+        {
+            var slowPointer = head;
+            var FastPointer = head;
+
+            for (int i = 0; i < n; i++)
+            {
+                FastPointer = FastPointer.Next;
+            }
+
+            while (FastPointer.Next != null)
+            {
+                slowPointer = slowPointer.Next;
+                FastPointer = FastPointer.Next;
+            }
+
+            slowPointer.Next = slowPointer.Next?.Next;
+
+            return head;
+        }
     }
+
+    public class SolutionMerge
+    {
+        //Definition for singly-linked list.    
+        public class ListNode
+        {
+            public int val;
+            public ListNode next;
+            public ListNode(int val = 0, ListNode next = null)
+            {
+                this.val = val;
+                this.next = next;
+            }
+        }
+
+        public ListNode MergeTwoLists(ListNode l1, ListNode l2)
+        {
+            var ListNode = new ListNode(0);
+            var currentNode = ListNode;
+
+
+            while (l1 != null && l2 != null)
+            {
+                if (l1.val < l2.val)
+                {
+                    currentNode.next = l1;
+                    l1 = l1.next;
+                }
+                else
+                {
+                    currentNode.next = l2;
+                    l2 = l2.next;
+                }
+                currentNode = currentNode.next;
+            }
+
+            if (l1 != null)
+            {
+                currentNode.next = l1;
+                l1 = l1.next;
+            }
+            if (l2 != null)
+            {
+                currentNode.next = l2;
+                l2 = l2.next;
+            }
+
+            return ListNode.next;
+
+        }
+
+        /// <summary>
+        /// Merges K List into one list using divide and conquer approach
+        /// </summary>
+        /// <param name="lists"></param>
+        /// <returns></returns>
+        public ListNode MergeKLists(ListNode[] lists)
+        {
+            if (lists == null || lists.Length == 0)
+                return null;
+            int last = lists.Length - 1;
+
+            // repeat until only one list is left 
+            while (last != 0)
+            {
+                int i = 0, j = last;
+
+                // (i, j) forms a pair 
+                while (i < j)
+                {
+                    // merge List i with List j and store 
+                    // merged list in List i 
+                    lists[i] = MergeTwoLists(lists[i], lists[j]);
+
+                    // consider next pair 
+                    i++;
+                    j--;
+
+                    // If all pairs are merged, update last 
+                    if (i >= j)
+                        last = j;
+                }
+            }
+
+            return lists[0];
+        }
+    }
+
 }

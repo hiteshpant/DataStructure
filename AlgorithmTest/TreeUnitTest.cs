@@ -1,11 +1,9 @@
-﻿using AlgorithmPractice.Tree;
+﻿using AlgorithmPractice.Array;
+using AlgorithmPractice.Tree;
 using AlgorithmPractice.Tree.Problems;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AlgorithmTest
 {
@@ -107,14 +105,69 @@ namespace AlgorithmTest
         public void TestBinaryLevelOrderTraversal()
         {
             AlgorithmPractice.Tree.Problems.TreeNode node = new AlgorithmPractice.Tree.Problems.TreeNode(3);
-            //node.left = new AlgorithmPractice.Tree.Problems.TreeNode(9);
-            //node.left.left = new AlgorithmPractice.Tree.Problems.TreeNode(11);
-            //node.left.right = new AlgorithmPractice.Tree.Problems.TreeNode(12);
-            //node.right = new AlgorithmPractice.Tree.Problems.TreeNode(20);
-            //node.right.left = new AlgorithmPractice.Tree.Problems.TreeNode(15);
-            //node.right.right = new AlgorithmPractice.Tree.Problems.TreeNode(7);
+            node.left = new AlgorithmPractice.Tree.Problems.TreeNode(9);
+            node.left.left = new AlgorithmPractice.Tree.Problems.TreeNode(11);
+            node.left.right = new AlgorithmPractice.Tree.Problems.TreeNode(12);
+            node.right = new AlgorithmPractice.Tree.Problems.TreeNode(20);
+            node.right.left = new AlgorithmPractice.Tree.Problems.TreeNode(15);
+            node.right.right = new AlgorithmPractice.Tree.Problems.TreeNode(7);
             PrintLevelOrderSolution sol = new PrintLevelOrderSolution();
-            var output =sol.LevelOrder(node);
+            var output = sol.LevelOrder(node);
+        }
+
+
+        [TestMethod]
+        public void TestConnectedLevelOrderTraversal()
+        {
+            AlgorithmPractice.Tree.Problems.Node node = new AlgorithmPractice.Tree.Problems.Node(1);
+            node.left = new AlgorithmPractice.Tree.Problems.Node(2);
+            node.left.left = new AlgorithmPractice.Tree.Problems.Node(4);
+            node.left.right = new AlgorithmPractice.Tree.Problems.Node(5);
+            node.right = new AlgorithmPractice.Tree.Problems.Node(3);
+            node.right.left = new AlgorithmPractice.Tree.Problems.Node(6);
+            node.right.right = new AlgorithmPractice.Tree.Problems.Node(7);
+            RightConnectLecelOrderSolution sol = new RightConnectLecelOrderSolution();
+            var output = sol.Connect(node);
+        }
+
+
+        [TestMethod]
+        public void RepeatingCharacterProblemTest()
+        {
+            RepeatingCharacterProblem prob = new RepeatingCharacterProblem();
+            var result = prob.GetNonRepeatinCharFromStream(new StringBuilder( "geeksforgeeksandgeeksquizfor"));
+        }
+
+        [TestMethod]
+        public void LCAUnitTest()
+
+        {
+            var sol = new LCABinaryTree();
+            LCABinaryTree.TreeNode node = new LCABinaryTree.TreeNode(1);
+            node.left = new LCABinaryTree.TreeNode(2);
+            node.right = new LCABinaryTree.TreeNode(3);
+            node.left.left = new LCABinaryTree.TreeNode(4);
+            node.left.right = new LCABinaryTree.TreeNode(5);
+            node.right.left = new LCABinaryTree.TreeNode(6);
+            node.right.right = new LCABinaryTree.TreeNode(7);
+            var result =sol.LowestCommonAncestor(node, new LCABinaryTree.TreeNode(4), new LCABinaryTree.TreeNode(5));
+        }
+
+
+        [TestMethod]
+        public void TrieTest()
+        {
+
+            Trie trie = new Trie();
+
+            trie.Insert("apple");
+            trie.Search("apple");   // returns true
+            trie.Search("app");     // returns false
+            trie.StartsWith("app"); // returns true
+            trie.Insert("app");
+            trie.Insert("app");     // returns true
+
+
         }
     }
 }
